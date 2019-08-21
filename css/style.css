@@ -562,6 +562,15 @@ nav li {
 }
 
 /*
+ * CONTACT
+ */
+
+.contact a{
+	color: blue;
+	text-decoration: underline;
+}
+
+/*
  * ICON CREDENTIALS
  */
 .icon-credentials {
