@@ -1,0 +1,570 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+ *  WEBSITE STYLING
+ */
+body {
+	background-image: url('../images/cyrus-gomez-p0rEixpAKTo-unsplash-4.jpg');
+	background-size: 100%;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.2rem;
+}
+
+@media(min-width: 800px) {
+	body {
+		background-position: initial;
+	}
+}
+
+/*
+ * GLOBAL
+ */
+h1 {
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: #0f7e47;
+	margin-bottom: 16px;
+}
+
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+p {
+	font-size: 1em;
+	text-align: justify;
+}
+
+/*
+  * HEADER
+  */
+header {
+	position: fixed;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: hsl(0, 0%, 100%);
+	padding-top: 10px;
+	z-index: 1;
+}
+
+@media(min-width: 800px) {
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+}
+
+
+header #branding {
+	font-size: 22px;
+	letter-spacing: 2px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	padding: 0;
+	font-weight: bold;
+}
+
+header #surname {
+	font-size: 16px;
+	letter-spacing: 0;
+}
+
+/*
+* NAVIGATION
+ */
+/* underline effect from cssfx.dev */
+nav {
+	margin-right: 20px;
+	width: 100vw;
+	height: 100vh;
+	font-size: 32px;
+	line-height: 1.4;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	left: -110%;
+}
+
+@media(min-width: 800px) {
+	nav {
+		width: initial;
+		height: initial;
+		font-size: 20px;
+		line-height: initial;
+		background-color: initial;
+		position: static;
+		left: initial;
+	}
+}
+
+nav a {
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	padding-bottom: 4px;
+}
+
+nav a::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ffffff;
+	transform-origin: center;
+	transform: translate(-50%, 0) scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+	transform: translate(-50%, 0) scaleX(1);
+}
+
+nav ul {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	left: -110%;
+	transition: left 0.25s ease-in-out;
+}
+
+@media(min-width: 800px) {
+	nav ul {
+		flex-direction: row;
+		position: relative;
+		left: initial;
+		top: initial;
+		transform: initial;
+		left: initial;
+	}
+}
+
+nav li {
+	display: inline;
+	margin-right: 20px;
+	padding-right: 20px;
+}
+
+/*
+	 * HAMBURGER
+	 * code from codepen by Enea Xharja
+	*/
+.hamburger {
+	cursor: pointer;
+	width: auto;
+	margin: 0 auto;
+	transition: all .7s ease;
+	position: absolute;
+	top: 6px;
+	right: 20px;
+}
+
+.bar {
+	display: block;
+	height: 5px;
+	width: 50px;
+	background: #fff;
+	margin: 10px auto;
+	transition: all .7s ease;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.hamburger.active .top {
+	transform: translateY(15px) rotateZ(45deg);
+}
+
+.hamburger.active.center {
+	width: 0;
+}
+
+.hamburger.active .bottom {
+	transform: translateY(-15px) rotateZ(-45deg);
+}
+
+@media(min-width: 800px) {
+	.hamburger {
+		display: none;
+	}
+}
+
+.nav-is-active {
+	left: 0;
+}
+
+.list-is-active {
+	left: 50%;
+}
+
+/*
+	* WRAPPER
+	*/
+.wrapper {
+	max-width: 920px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 80px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+@media(min-width: 800px) {
+	.wrapper {
+		padding-left: 120px;
+		padding-right: initial;
+	}
+}
+
+.container {
+
+	background-color: rgba(255, 255, 255, 0.3);
+	margin: 30px 0;
+	padding: 20px 24px;
+	box-shadow: #fefefe -2px 2px 6px -2px;
+	border-radius: 4px;
+	text-align: justify;
+}
+
+/*
+* ABOUT ME
+*/
+.about-me__inner {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+@media(min-width: 800px) {
+	.about-me__inner {
+		flex-direction: row;
+	}
+}
+
+.about-me img {
+	max-width: 140px;
+	margin-left: 20px;
+	border-radius: 4px;
+}
+
+#author-photo img {
+	box-shadow: #fefefe -2px 2px 6px -2px;
+}
+
+.about-me__inner p {
+	padding-right: initial;
+	padding-top: 20px;
+}
+
+@media(min-width: 800px) {
+	.about-me__inner p {
+		padding-right: 20px;
+	}
+}
+
+/*
+ * SKILLS
+ */
+
+.skills {
+	width: 100%;
+	display: inline-block;
+}
+
+.programming-skills,
+.soft-skills {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.skills img {
+	max-width: 100px;
+	padding-top: 16px;
+	filter: opacity(0.75) drop-shadow(-4px 4px 6px #fefefe);
+	max-height: 120px;
+}
+
+.skills li {
+	min-height: 310px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 4px 17px rgba(239, 239, 239, 1);
+	border-radius: 4px;
+	margin: 8px;
+	min-width: 200px;
+}
+
+.skills img:hover {
+	filter: drop-shadow(-2px 2px 2px #fefefe);
+}
+
+.image-wrapper {
+	display: flex;
+	min-height: 140px;
+	align-items: flex-end;
+}
+
+.skills-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.skills li:hover {
+	font-weight: bold;
+}
+
+.skills p {
+	margin-top: 20px;
+	padding-top: 10px;
+}
+
+/*
+ * HOBBIES
+ */
+
+.hobbies {
+	min-height: 260px;
+}
+
+.list-hobbies {
+	display: block;
+}
+
+.hobbies li {
+	width: 100%;
+	padding: 16px;
+}
+
+@media(min-width: 800px) {
+	.list-hobbies {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/*
+ * AMBITIONS
+ */
+.ambitions {
+	padding-top: 16px;
+}
+
+
+/*
+ * FLIP-CARDS
+ */
+/* effect based on code from codepen.io/Corpus/pen/REybzG?&page=1 */
+
+.flip-card {
+	background-color: transparent;
+	min-height: 140px;
+	padding-top: 10px;
+}
+
+.flip-card img {
+	max-width: 200px;
+	border-radius: 4px;
+}
+
+@media(min-width: 800px) {
+	.flip-card img {
+		max-width: 100%;
+	}
+}
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+	min-height: 140px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.flip-card-front,
+.flip-card-back p {
+	font-size: 24px;
+}
+
+.flip-card-front {
+	color: black;
+}
+
+.flip-card-back {
+	transform: rotateY(180deg);
+	text-align: center;
+}
+
+/*
+ * ICON CREDENTIALS
+ */
+.icon-credentials {
+	font-size: 0.6rem;
+	line-height: 1.2;
+}
